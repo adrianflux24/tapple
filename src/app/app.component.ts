@@ -26,9 +26,10 @@ padding: 1rem;
   width: 100%;
 }
 .alphabet {
+  flex: 1;
   display: grid;
   gap: 6px;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   width: 100%;
 }
 `,

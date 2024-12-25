@@ -4,24 +4,28 @@ import { EngineService } from "../service/engine.service";
 @Component({
   selector: 'letter',
   styles: `
+span {
+  text-align: center;
+  font-size: 16px;
+}
 :host {
-display: flex;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
 align-items:center;
 justify-content: center;
 padding-block: 4px;
   user-select: none;
-  color: #808080;
-  padding: 0.7em 1.7em;
-  font-size: 18px;
-  border-radius: 0.1em;
-  background: #f2f2f2;
+  color: #f1f1f1;
+  padding: 0.0em;
+  border-radius: 0.6em;
+  background: black;
   cursor: pointer;
-  border: 1px solid #f1f1f1;
+  border: 1px solid #dbdbdb;
   transition: all 0.3s;
-  font-weight: bold;
+  font-weight: bolder;
   box-shadow: 6px 6px 12px #eaeaea, -6px -6px 12px #ffffff;
 &.inactive{
-  opacity: 0.4;
+  opacity: 0.1;
   box-shadow: 6px 6px 12px #ffffff, -6px -6px 12px  #eaeaea;
 }
 }
@@ -32,7 +36,14 @@ padding-block: 4px;
     '[class.inactive]': 'item().selected === true'
   },
   template: `
-{{ item().label }}
+<span></span>
+<span style="transform: rotate(180deg)">{{ item().label }}</span>
+<span></span>
+<span style="transform: rotate(90deg)">{{ item().label }}</span>
+<span></span>
+<span style="transform: rotate(270deg)">{{ item().label }}</span>
+<span></span>
+<span>{{ item().label }}</span>
 `
 })
 export class Letter {

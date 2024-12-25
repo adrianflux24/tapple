@@ -24,6 +24,11 @@ export class EngineService {
       list[index].selected = true;
       return list;
     })
+    const alphabet = this.alphabet().filter(x => x.selected === false)
+    if (alphabet.length === 0) {
+      this._resetAlphabet();
+      return;
+    }
     this._restart()
   }
 
